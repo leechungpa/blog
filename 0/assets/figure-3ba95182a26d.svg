@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="547.2pt" height="252pt" viewBox="0 0 547.2 252" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>SSEM theory and directly optimized embeddings</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>SSEM theory and directly optimized embeddings</dc:title>
+    <dc:date>2026-10-20T19:47:47.364353</dc:date>
+    <dc:description>A four-instance reproduction adapted from the authors’ code. Blue lines show SSEM predictions; hollow markers show means of three independent optimization runs.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="ssem-v37-desktop-figure_1">
+  <g id="ssem-v37-desktop-patch_1">
+   <path d="M 0 252 
+L 547.2 252 
+L 547.2 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="ssem-v37-desktop-axes_1">
+   <g id="ssem-v37-desktop-patch_2">
+    <path d="M 49.248 201.6 
+L 258.540308 201.6 
+L 258.540308 55.44 
+L 49.248 55.44 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="ssem-v37-desktop-patch_3">
+    <path d="M 54.23115 201.6 
+L 157.479273 201.6 
+L 157.479273 55.44 
+L 54.23115 55.44 
+z
+" clip-path="url(#ssem-v37-desktop-p66543d0b0d)" style="fill: #f4f6f8"/>
+   </g>
+   <g id="ssem-v37-desktop-matplotlib.axis_1">
+    <g id="ssem-v37-desktop-xtick_1">
+     <g id="ssem-v37-desktop-line2d_1">
+      <defs>
+       <path id="ssem-v37-desktop-m8c285e7be7" d="M 0 0 
+L 0 3.2 
+" style="stroke: #64748b; stroke-width: 0.7"/>
+      </defs>
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="54.23115" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_1">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="54.23115" y="216.398438" transform="rotate(-0 54.23115 216.398438)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_2">
+     <g id="ssem-v37-desktop-line2d_2">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="104.062652" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_2">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="104.062652" y="216.398438" transform="rotate(-0 104.062652 216.398438)">0.25</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_3">
+     <g id="ssem-v37-desktop-line2d_3">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="153.894154" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_3">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="153.894154" y="216.398438" transform="rotate(-0 153.894154 216.398438)">0.5</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_4">
+     <g id="ssem-v37-desktop-line2d_4">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="203.725656" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_4">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="203.725656" y="216.398438" transform="rotate(-0 203.725656 216.398438)">0.75</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_5">
+     <g id="ssem-v37-desktop-line2d_5">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="253.557158" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_5">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="253.557158" y="216.398438" transform="rotate(-0 253.557158 216.398438)">1</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-text_6">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="153.894154" y="235.216328" transform="rotate(-0 153.894154 235.216328)">Self-supervised weight α</text>
+    </g>
+   </g>
+   <g id="ssem-v37-desktop-matplotlib.axis_2">
+    <g id="ssem-v37-desktop-ytick_1">
+     <g id="ssem-v37-desktop-line2d_6">
+      <path d="M 49.248 196.628571 
+L 258.540308 196.628571 
+" clip-path="url(#ssem-v37-desktop-p66543d0b0d)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_7">
+      <defs>
+       <path id="ssem-v37-desktop-m87836afa34" d="M 0 0 
+L -3.2 0 
+" style="stroke: #64748b; stroke-width: 0.7"/>
+      </defs>
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="49.248" y="196.628571" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_7">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="42.048" y="200.42779" transform="rotate(-0 42.048 200.42779)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-ytick_2">
+     <g id="ssem-v37-desktop-line2d_8">
+      <path d="M 49.248 156.857143 
+L 258.540308 156.857143 
+" clip-path="url(#ssem-v37-desktop-p66543d0b0d)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_9">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="49.248" y="156.857143" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_8">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="42.048" y="160.656362" transform="rotate(-0 42.048 160.656362)">0.2</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-ytick_3">
+     <g id="ssem-v37-desktop-line2d_10">
+      <path d="M 49.248 117.085714 
+L 258.540308 117.085714 
+" clip-path="url(#ssem-v37-desktop-p66543d0b0d)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_11">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="49.248" y="117.085714" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_9">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="42.048" y="120.884933" transform="rotate(-0 42.048 120.884933)">0.4</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-ytick_4">
+     <g id="ssem-v37-desktop-line2d_12">
+      <path d="M 49.248 77.314286 
+L 258.540308 77.314286 
+" clip-path="url(#ssem-v37-desktop-p66543d0b0d)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_13">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="49.248" y="77.314286" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_10">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="42.048" y="81.113504" transform="rotate(-0 42.048 81.113504)">0.6</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-text_11">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="14.753234" y="128.52" transform="rotate(-90 14.753234 128.52)">Within-class variance</text>
+    </g>
+   </g>
+   <g id="ssem-v37-desktop-line2d_14">
+    <path d="M 157.479273 201.6 
+L 157.479273 55.44 
+" clip-path="url(#ssem-v37-desktop-p66543d0b0d)" style="fill: none; stroke-dasharray: 2.55,2.55; stroke-dashoffset: 0; stroke: #a2acb9; stroke-width: 0.85"/>
+   </g>
+   <g id="ssem-v37-desktop-patch_4">
+    <path d="M 49.248 201.6 
+L 49.248 55.44 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-desktop-patch_5">
+    <path d="M 49.248 201.6 
+L 258.540308 201.6 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-desktop-text_12">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="105.855212" y="110.896518" transform="rotate(-0 105.855212 110.896518)">Class collapse</text>
+   </g>
+   <g id="ssem-v37-desktop-line2d_15">
+    <path d="M 54.23115 196.628571 
+L 157.548464 196.562998 
+L 176.484435 178.468939 
+L 185.786315 169.251382 
+L 193.094935 161.711623 
+L 199.739136 154.539703 
+L 205.718916 147.748374 
+L 211.034276 141.374758 
+L 216.017426 135.044756 
+L 220.668366 128.760352 
+L 224.987096 122.532549 
+L 228.973617 116.382736 
+L 232.627927 110.344135 
+L 236.282237 103.852084 
+L 239.604337 97.488011 
+L 242.926437 90.608107 
+L 245.916327 83.904467 
+L 248.906217 76.64279 
+L 251.896107 68.746591 
+L 253.557158 64.057143 
+L 253.557158 64.057143 
+" clip-path="url(#ssem-v37-desktop-p66543d0b0d)" style="fill: none; stroke: #245bd7; stroke-width: 2.1; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-desktop-text_13">
+    <text style="font-weight: 600; font-size: 13px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="49.248" y="45.44" transform="rotate(-0 49.248 45.44)">τ = 0.5</text>
+   </g>
+   <g id="ssem-v37-desktop-line2d_16">
+    <defs>
+     <path id="ssem-v37-desktop-m7b73ef6945" d="M 0 2.75 
+C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
+C 2.460243 1.428845 2.75 0.729309 2.75 0 
+C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
+C 1.428845 -2.460243 0.729309 -2.75 0 -2.75 
+C -0.729309 -2.75 -1.428845 -2.460243 -1.944544 -1.944544 
+C -2.460243 -1.428845 -2.75 -0.729309 -2.75 0 
+C -2.75 0.729309 -2.460243 1.428845 -1.944544 1.944544 
+C -1.428845 2.460243 -0.729309 2.75 0 2.75 
+z
+" style="stroke: #1f2937; stroke-width: 1.2"/>
+    </defs>
+    <g clip-path="url(#ssem-v37-desktop-p66543d0b0d)">
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="54.23115" y="196.628571" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="133.961553" y="196.628571" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="153.894154" y="196.628571" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="173.826755" y="181.046653" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="193.759355" y="161.009532" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="223.658256" y="124.493378" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="253.557158" y="64.057143" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+    </g>
+   </g>
+  </g>
+  <g id="ssem-v37-desktop-axes_2">
+   <g id="ssem-v37-desktop-patch_6">
+    <path d="M 329.699692 201.6 
+L 538.992 201.6 
+L 538.992 55.44 
+L 329.699692 55.44 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="ssem-v37-desktop-patch_7">
+    <path d="M 334.682842 201.6 
+L 458.106089 201.6 
+L 458.106089 55.44 
+L 334.682842 55.44 
+z
+" clip-path="url(#ssem-v37-desktop-pef9e5f1b66)" style="fill: #f4f6f8"/>
+   </g>
+   <g id="ssem-v37-desktop-matplotlib.axis_3">
+    <g id="ssem-v37-desktop-xtick_6">
+     <g id="ssem-v37-desktop-line2d_17">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="334.682842" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_14">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="334.682842" y="216.398438" transform="rotate(-0 334.682842 216.398438)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_7">
+     <g id="ssem-v37-desktop-line2d_18">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="384.514344" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_15">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="384.514344" y="216.398438" transform="rotate(-0 384.514344 216.398438)">0.25</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_8">
+     <g id="ssem-v37-desktop-line2d_19">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="434.345846" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_16">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="434.345846" y="216.398438" transform="rotate(-0 434.345846 216.398438)">0.5</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_9">
+     <g id="ssem-v37-desktop-line2d_20">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="484.177348" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_17">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="484.177348" y="216.398438" transform="rotate(-0 484.177348 216.398438)">0.75</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-xtick_10">
+     <g id="ssem-v37-desktop-line2d_21">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m8c285e7be7" x="534.00885" y="201.6" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_18">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="534.00885" y="216.398438" transform="rotate(-0 534.00885 216.398438)">1</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-text_19">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="434.345846" y="235.216328" transform="rotate(-0 434.345846 235.216328)">Self-supervised weight α</text>
+    </g>
+   </g>
+   <g id="ssem-v37-desktop-matplotlib.axis_4">
+    <g id="ssem-v37-desktop-ytick_5">
+     <g id="ssem-v37-desktop-line2d_22">
+      <path d="M 329.699692 196.628571 
+L 538.992 196.628571 
+" clip-path="url(#ssem-v37-desktop-pef9e5f1b66)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_23">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="329.699692" y="196.628571" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_20">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="322.499692" y="200.42779" transform="rotate(-0 322.499692 200.42779)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-ytick_6">
+     <g id="ssem-v37-desktop-line2d_24">
+      <path d="M 329.699692 156.857143 
+L 538.992 156.857143 
+" clip-path="url(#ssem-v37-desktop-pef9e5f1b66)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_25">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="329.699692" y="156.857143" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_21">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="322.499692" y="160.656362" transform="rotate(-0 322.499692 160.656362)">0.2</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-ytick_7">
+     <g id="ssem-v37-desktop-line2d_26">
+      <path d="M 329.699692 117.085714 
+L 538.992 117.085714 
+" clip-path="url(#ssem-v37-desktop-pef9e5f1b66)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_27">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="329.699692" y="117.085714" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_22">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="322.499692" y="120.884933" transform="rotate(-0 322.499692 120.884933)">0.4</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-ytick_8">
+     <g id="ssem-v37-desktop-line2d_28">
+      <path d="M 329.699692 77.314286 
+L 538.992 77.314286 
+" clip-path="url(#ssem-v37-desktop-pef9e5f1b66)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-desktop-line2d_29">
+      <g>
+       <use xlink:href="#ssem-v37-desktop-m87836afa34" x="329.699692" y="77.314286" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-desktop-text_23">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="322.499692" y="81.113504" transform="rotate(-0 322.499692 81.113504)">0.6</text>
+     </g>
+    </g>
+    <g id="ssem-v37-desktop-text_24">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="295.204927" y="128.52" transform="rotate(-90 295.204927 128.52)">Within-class variance</text>
+    </g>
+   </g>
+   <g id="ssem-v37-desktop-line2d_30">
+    <path d="M 458.106089 201.6 
+L 458.106089 55.44 
+" clip-path="url(#ssem-v37-desktop-pef9e5f1b66)" style="fill: none; stroke-dasharray: 2.55,2.55; stroke-dashoffset: 0; stroke: #a2acb9; stroke-width: 0.85"/>
+   </g>
+   <g id="ssem-v37-desktop-patch_8">
+    <path d="M 329.699692 201.6 
+L 329.699692 55.44 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-desktop-patch_9">
+    <path d="M 329.699692 201.6 
+L 538.992 201.6 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-desktop-text_25">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="396.394466" y="110.896518" transform="rotate(-0 396.394466 110.896518)">Class collapse</text>
+   </g>
+   <g id="ssem-v37-desktop-line2d_31">
+    <path d="M 334.682842 196.628571 
+L 458.106089 196.628571 
+L 476.868728 167.65161 
+L 486.502818 152.364121 
+L 494.475858 139.320984 
+L 501.784479 126.938646 
+L 508.428679 115.231121 
+L 514.408459 104.243279 
+L 520.056029 93.394992 
+L 525.371389 82.69115 
+L 530.35454 72.147787 
+L 534.00885 64.057143 
+L 534.00885 64.057143 
+" clip-path="url(#ssem-v37-desktop-pef9e5f1b66)" style="fill: none; stroke: #245bd7; stroke-width: 2.1; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-desktop-text_26">
+    <text style="font-weight: 600; font-size: 13px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="329.699692" y="45.44" transform="rotate(-0 329.699692 45.44)">τ = 1.0</text>
+   </g>
+   <g id="ssem-v37-desktop-line2d_32">
+    <g clip-path="url(#ssem-v37-desktop-pef9e5f1b66)">
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="334.682842" y="196.628571" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="414.413245" y="196.628571" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="434.345846" y="196.628571" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="454.278447" y="196.628571" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="474.211048" y="171.802303" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="504.109949" y="122.894924" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="534.00885" y="64.057143" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+    </g>
+   </g>
+  </g>
+  <g id="ssem-v37-desktop-legend_1">
+   <g id="ssem-v37-desktop-line2d_33">
+    <path d="M 190.100406 18.188281 
+L 201.650406 18.188281 
+L 213.200406 18.188281 
+" style="fill: none; stroke: #245bd7; stroke-width: 2.1; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-desktop-text_27">
+    <text style="font-size: 11px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="220.900406" y="22.038281" transform="rotate(-0 220.900406 22.038281)">Theory</text>
+   </g>
+   <g id="ssem-v37-desktop-line2d_34">
+    <g>
+     <use xlink:href="#ssem-v37-desktop-m7b73ef6945" x="289.371969" y="18.188281" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+    </g>
+   </g>
+   <g id="ssem-v37-desktop-text_28">
+    <text style="font-size: 11px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="308.621969" y="22.038281" transform="rotate(-0 308.621969 22.038281)">Optimization</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="ssem-v37-desktop-p66543d0b0d">
+   <rect x="49.248" y="55.44" width="209.292308" height="146.16"/>
+  </clipPath>
+  <clipPath id="ssem-v37-desktop-pef9e5f1b66">
+   <rect x="329.699692" y="55.44" width="209.292308" height="146.16"/>
+  </clipPath>
+ </defs>
+</svg>

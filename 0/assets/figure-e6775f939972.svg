@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="266.4pt" height="457.2pt" viewBox="0 0 266.4 457.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>SSEM theory and directly optimized embeddings</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>SSEM theory and directly optimized embeddings</dc:title>
+    <dc:date>2026-10-20T19:47:47.466462</dc:date>
+    <dc:description>A four-instance reproduction adapted from the authors’ code. Blue lines show SSEM predictions; hollow markers show means of three independent optimization runs.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="ssem-v37-mobile-figure_1">
+  <g id="ssem-v37-mobile-patch_1">
+   <path d="M 0 457.2 
+L 266.4 457.2 
+L 266.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="ssem-v37-mobile-axes_1">
+   <g id="ssem-v37-mobile-patch_2">
+    <path d="M 47.952 203.232774 
+L 258.408 203.232774 
+L 258.408 59.436 
+L 47.952 59.436 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="ssem-v37-mobile-patch_3">
+    <path d="M 52.962857 203.232774 
+L 156.785053 203.232774 
+L 156.785053 59.436 
+L 52.962857 59.436 
+z
+" clip-path="url(#ssem-v37-mobile-p1b9dcef071)" style="fill: #f4f6f8"/>
+   </g>
+   <g id="ssem-v37-mobile-matplotlib.axis_1">
+    <g id="ssem-v37-mobile-xtick_1">
+     <g id="ssem-v37-mobile-line2d_1">
+      <defs>
+       <path id="ssem-v37-mobile-m8c285e7be7" d="M 0 0 
+L 0 3.2 
+" style="stroke: #64748b; stroke-width: 0.7"/>
+      </defs>
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="52.962857" y="203.232774" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_1">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="52.962857" y="218.031212" transform="rotate(-0 52.962857 218.031212)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_2">
+     <g id="ssem-v37-mobile-line2d_2">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="103.071429" y="203.232774" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_2">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="103.071429" y="218.031212" transform="rotate(-0 103.071429 218.031212)">0.25</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_3">
+     <g id="ssem-v37-mobile-line2d_3">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="153.18" y="203.232774" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_3">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="153.18" y="218.031212" transform="rotate(-0 153.18 218.031212)">0.5</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_4">
+     <g id="ssem-v37-mobile-line2d_4">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="203.288571" y="203.232774" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_4">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="203.288571" y="218.031212" transform="rotate(-0 203.288571 218.031212)">0.75</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_5">
+     <g id="ssem-v37-mobile-line2d_5">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="253.397143" y="203.232774" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_5">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="253.397143" y="218.031212" transform="rotate(-0 253.397143 218.031212)">1</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-text_6">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="153.18" y="236.849102" transform="rotate(-0 153.18 236.849102)">Self-supervised weight α</text>
+    </g>
+   </g>
+   <g id="ssem-v37-mobile-matplotlib.axis_2">
+    <g id="ssem-v37-mobile-ytick_1">
+     <g id="ssem-v37-mobile-line2d_6">
+      <path d="M 47.952 198.341727 
+L 258.408 198.341727 
+" clip-path="url(#ssem-v37-mobile-p1b9dcef071)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_7">
+      <defs>
+       <path id="ssem-v37-mobile-m87836afa34" d="M 0 0 
+L -3.2 0 
+" style="stroke: #64748b; stroke-width: 0.7"/>
+      </defs>
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="198.341727" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_7">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="202.140946" transform="rotate(-0 40.752 202.140946)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-ytick_2">
+     <g id="ssem-v37-mobile-line2d_8">
+      <path d="M 47.952 159.213354 
+L 258.408 159.213354 
+" clip-path="url(#ssem-v37-mobile-p1b9dcef071)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_9">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="159.213354" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_8">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="163.012572" transform="rotate(-0 40.752 163.012572)">0.2</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-ytick_3">
+     <g id="ssem-v37-mobile-line2d_10">
+      <path d="M 47.952 120.08498 
+L 258.408 120.08498 
+" clip-path="url(#ssem-v37-mobile-p1b9dcef071)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_11">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="120.08498" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_9">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="123.884198" transform="rotate(-0 40.752 123.884198)">0.4</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-ytick_4">
+     <g id="ssem-v37-mobile-line2d_12">
+      <path d="M 47.952 80.956606 
+L 258.408 80.956606 
+" clip-path="url(#ssem-v37-mobile-p1b9dcef071)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_13">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="80.956606" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_10">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="84.755824" transform="rotate(-0 40.752 84.755824)">0.6</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-text_11">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="13.457234" y="131.334387" transform="rotate(-90 13.457234 131.334387)">Within-class variance</text>
+    </g>
+   </g>
+   <g id="ssem-v37-mobile-line2d_14">
+    <path d="M 156.785053 203.232774 
+L 156.785053 59.436 
+" clip-path="url(#ssem-v37-mobile-p1b9dcef071)" style="fill: none; stroke-dasharray: 2.55,2.55; stroke-dashoffset: 0; stroke: #a2acb9; stroke-width: 0.85"/>
+   </g>
+   <g id="ssem-v37-mobile-patch_4">
+    <path d="M 47.952 203.232774 
+L 47.952 59.436 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-mobile-patch_5">
+    <path d="M 47.952 203.232774 
+L 258.408 203.232774 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-mobile-text_12">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="104.873955" y="114.04047" transform="rotate(-0 104.873955 114.04047)">Class collapse</text>
+   </g>
+   <g id="ssem-v37-mobile-line2d_15">
+    <path d="M 52.962857 198.341727 
+L 156.854629 198.277214 
+L 175.895886 180.475713 
+L 185.249486 171.407193 
+L 192.9328 163.644352 
+L 199.613943 156.571165 
+L 205.626971 149.869832 
+L 210.971886 143.5774 
+L 215.982743 137.324712 
+L 220.659543 131.113631 
+L 225.002286 124.954968 
+L 229.010971 118.86987 
+L 232.6856 112.891299 
+L 236.360229 106.459888 
+L 239.7008 100.151414 
+L 243.041371 93.327559 
+L 246.047886 86.674877 
+L 249.0544 79.465032 
+L 252.060914 71.622408 
+L 253.397143 67.913814 
+L 253.397143 67.913814 
+" clip-path="url(#ssem-v37-mobile-p1b9dcef071)" style="fill: none; stroke: #245bd7; stroke-width: 2.1; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-mobile-text_13">
+    <text style="font-weight: 600; font-size: 13px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="47.952" y="49.436" transform="rotate(-0 47.952 49.436)">τ = 0.5</text>
+   </g>
+   <g id="ssem-v37-mobile-line2d_16">
+    <defs>
+     <path id="ssem-v37-mobile-m7b73ef6945" d="M 0 2.75 
+C 0.729309 2.75 1.428845 2.460243 1.944544 1.944544 
+C 2.460243 1.428845 2.75 0.729309 2.75 0 
+C 2.75 -0.729309 2.460243 -1.428845 1.944544 -1.944544 
+C 1.428845 -2.460243 0.729309 -2.75 0 -2.75 
+C -0.729309 -2.75 -1.428845 -2.460243 -1.944544 -1.944544 
+C -2.460243 -1.428845 -2.75 -0.729309 -2.75 0 
+C -2.75 0.729309 -2.460243 1.428845 -1.944544 1.944544 
+C -1.428845 2.460243 -0.729309 2.75 0 2.75 
+z
+" style="stroke: #1f2937; stroke-width: 1.2"/>
+    </defs>
+    <g clip-path="url(#ssem-v37-mobile-p1b9dcef071)">
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="52.962857" y="198.341727" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="133.136571" y="198.341727" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="153.18" y="198.341727" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="173.223429" y="183.011749" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="193.266857" y="163.298604" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="223.332" y="127.37287" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="253.397143" y="67.913814" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+    </g>
+   </g>
+  </g>
+  <g id="ssem-v37-mobile-axes_2">
+   <g id="ssem-v37-mobile-patch_6">
+    <path d="M 47.952 416.052 
+L 258.408 416.052 
+L 258.408 272.255226 
+L 47.952 272.255226 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="ssem-v37-mobile-patch_7">
+    <path d="M 52.962857 416.052 
+L 177.072353 416.052 
+L 177.072353 272.255226 
+L 52.962857 272.255226 
+z
+" clip-path="url(#ssem-v37-mobile-p040d0a5566)" style="fill: #f4f6f8"/>
+   </g>
+   <g id="ssem-v37-mobile-matplotlib.axis_3">
+    <g id="ssem-v37-mobile-xtick_6">
+     <g id="ssem-v37-mobile-line2d_17">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="52.962857" y="416.052" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_14">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="52.962857" y="430.850437" transform="rotate(-0 52.962857 430.850437)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_7">
+     <g id="ssem-v37-mobile-line2d_18">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="103.071429" y="416.052" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_15">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="103.071429" y="430.850437" transform="rotate(-0 103.071429 430.850437)">0.25</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_8">
+     <g id="ssem-v37-mobile-line2d_19">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="153.18" y="416.052" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_16">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="153.18" y="430.850437" transform="rotate(-0 153.18 430.850437)">0.5</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_9">
+     <g id="ssem-v37-mobile-line2d_20">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="203.288571" y="416.052" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_17">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="203.288571" y="430.850437" transform="rotate(-0 203.288571 430.850437)">0.75</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-xtick_10">
+     <g id="ssem-v37-mobile-line2d_21">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m8c285e7be7" x="253.397143" y="416.052" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_18">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="253.397143" y="430.850437" transform="rotate(-0 253.397143 430.850437)">1</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-text_19">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="153.18" y="449.668328" transform="rotate(-0 153.18 449.668328)">Self-supervised weight α</text>
+    </g>
+   </g>
+   <g id="ssem-v37-mobile-matplotlib.axis_4">
+    <g id="ssem-v37-mobile-ytick_5">
+     <g id="ssem-v37-mobile-line2d_22">
+      <path d="M 47.952 411.160953 
+L 258.408 411.160953 
+" clip-path="url(#ssem-v37-mobile-p040d0a5566)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_23">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="411.160953" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_20">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="414.960172" transform="rotate(-0 40.752 414.960172)">0</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-ytick_6">
+     <g id="ssem-v37-mobile-line2d_24">
+      <path d="M 47.952 372.032579 
+L 258.408 372.032579 
+" clip-path="url(#ssem-v37-mobile-p040d0a5566)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_25">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="372.032579" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_21">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="375.831798" transform="rotate(-0 40.752 375.831798)">0.2</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-ytick_7">
+     <g id="ssem-v37-mobile-line2d_26">
+      <path d="M 47.952 332.904205 
+L 258.408 332.904205 
+" clip-path="url(#ssem-v37-mobile-p040d0a5566)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_27">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="332.904205" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_22">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="336.703424" transform="rotate(-0 40.752 336.703424)">0.4</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-ytick_8">
+     <g id="ssem-v37-mobile-line2d_28">
+      <path d="M 47.952 293.775831 
+L 258.408 293.775831 
+" clip-path="url(#ssem-v37-mobile-p040d0a5566)" style="fill: none; stroke: #e3e7ed; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="ssem-v37-mobile-line2d_29">
+      <g>
+       <use xlink:href="#ssem-v37-mobile-m87836afa34" x="47.952" y="293.775831" style="fill: #64748b; stroke: #64748b; stroke-width: 0.7"/>
+      </g>
+     </g>
+     <g id="ssem-v37-mobile-text_23">
+      <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: end; fill: #64748b" x="40.752" y="297.57505" transform="rotate(-0 40.752 297.57505)">0.6</text>
+     </g>
+    </g>
+    <g id="ssem-v37-mobile-text_24">
+     <text style="font-size: 11.5px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #1f2937" x="13.457234" y="344.153613" transform="rotate(-90 13.457234 344.153613)">Within-class variance</text>
+    </g>
+   </g>
+   <g id="ssem-v37-mobile-line2d_30">
+    <path d="M 177.072353 416.052 
+L 177.072353 272.255226 
+" clip-path="url(#ssem-v37-mobile-p040d0a5566)" style="fill: none; stroke-dasharray: 2.55,2.55; stroke-dashoffset: 0; stroke: #a2acb9; stroke-width: 0.85"/>
+   </g>
+   <g id="ssem-v37-mobile-patch_8">
+    <path d="M 47.952 416.052 
+L 47.952 272.255226 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-mobile-patch_9">
+    <path d="M 47.952 416.052 
+L 258.408 416.052 
+" style="fill: none; stroke: #bcc5d0; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-mobile-text_25">
+    <text style="font-size: 10px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: middle; fill: #64748b" x="115.017605" y="326.859696" transform="rotate(-0 115.017605 326.859696)">Class collapse</text>
+   </g>
+   <g id="ssem-v37-mobile-line2d_31">
+    <path d="M 52.962857 411.160953 
+L 177.072353 411.160953 
+L 195.939314 382.652513 
+L 205.626971 367.612204 
+L 213.644343 354.779958 
+L 220.9936 342.597827 
+L 227.674743 331.079599 
+L 233.687771 320.269416 
+L 239.366743 309.596532 
+L 244.711657 299.065759 
+L 249.722514 288.692869 
+L 253.397143 280.73304 
+L 253.397143 280.73304 
+" clip-path="url(#ssem-v37-mobile-p040d0a5566)" style="fill: none; stroke: #245bd7; stroke-width: 2.1; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-mobile-text_26">
+    <text style="font-weight: 600; font-size: 13px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="47.952" y="262.255226" transform="rotate(-0 47.952 262.255226)">τ = 1.0</text>
+   </g>
+   <g id="ssem-v37-mobile-line2d_32">
+    <g clip-path="url(#ssem-v37-mobile-p040d0a5566)">
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="52.962857" y="411.160953" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="133.136571" y="411.160953" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="153.18" y="411.160953" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="173.223429" y="411.160953" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="193.266857" y="386.736094" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="223.332" y="338.619488" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="253.397143" y="280.73304" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+    </g>
+   </g>
+  </g>
+  <g id="ssem-v37-mobile-legend_1">
+   <g id="ssem-v37-mobile-line2d_33">
+    <path d="M 44.084406 21.266281 
+L 55.634406 21.266281 
+L 67.184406 21.266281 
+" style="fill: none; stroke: #245bd7; stroke-width: 2.1; stroke-linecap: square"/>
+   </g>
+   <g id="ssem-v37-mobile-text_27">
+    <text style="font-size: 11px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="74.884406" y="25.116281" transform="rotate(-0 74.884406 25.116281)">Theory</text>
+   </g>
+   <g id="ssem-v37-mobile-line2d_34">
+    <g>
+     <use xlink:href="#ssem-v37-mobile-m7b73ef6945" x="143.355969" y="21.266281" style="fill: #ffffff; stroke: #1f2937; stroke-width: 1.2"/>
+    </g>
+   </g>
+   <g id="ssem-v37-mobile-text_28">
+    <text style="font-size: 11px; font-family: 'Arial', 'Helvetica', sans-serif; text-anchor: start; fill: #1f2937" x="162.605969" y="25.116281" transform="rotate(-0 162.605969 25.116281)">Optimization</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="ssem-v37-mobile-p1b9dcef071">
+   <rect x="47.952" y="59.436" width="210.456" height="143.796774"/>
+  </clipPath>
+  <clipPath id="ssem-v37-mobile-p040d0a5566">
+   <rect x="47.952" y="272.255226" width="210.456" height="143.796774"/>
+  </clipPath>
+ </defs>
+</svg>
