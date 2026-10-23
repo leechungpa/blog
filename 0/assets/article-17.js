@@ -11,6 +11,7 @@
   if (!overview || !header || chapters.some(function (chapter) { return !chapter; })) return;
 
   var activeId = ids[0];
+  var overviewExpanded = true;
   var sequence = 0;
   var navigationVersion = 0;
   var currentEntry = null;
@@ -18,8 +19,36 @@
   var scrollFrame = 0;
   var historyFrame = 0;
   var pendingOwnHash = null;
-  var headerHeight = 68;
+  var headerHeight = 53;
   var initialized = false;
+
+  function installCompactNavigation() {
+    if (!document.getElementById('compact-reader-navigation')) {
+      var style = document.createElement('style');
+      style.id = 'compact-reader-navigation';
+      style.textContent = ".section-reader-header{box-shadow:none}\n.reader-header-inner{min-height:52px;padding:4px 24px;gap:12px;align-items:center}\n.reader-contents{min-height:40px;padding:6px 4px;font-size:12px}\n.reader-tabs{display:flex;flex:1 1 auto;gap:4px;min-width:0;overflow-x:auto;scrollbar-width:none}\n.reader-tabs::-webkit-scrollbar{display:none}\n.reader-tab{display:flex;flex:0 0 auto;align-items:center;gap:6px;min-height:40px;padding:7px 12px;font-size:13px;line-height:1.3;border:1px solid transparent;background:transparent;border-radius:5px;white-space:nowrap}\n.reader-tab-number{align-self:center;margin-top:0;font-size:11px;line-height:1.3}\n.reader-tab-label{font-size:13px;white-space:nowrap}\n.reader-tab[aria-current=\"page\"]{background:#edf3ff;border-color:transparent}\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article{padding-top:calc(var(--reader-header-height,53px) + 18px)}\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.article-header,\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.opening{display:none}\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .chapter{margin-top:0;padding-top:8px;border-top:0}\n@media(max-width:760px){\n .reader-header-inner{min-height:52px;padding:4px 10px;gap:6px}\n .reader-contents{min-width:24px;min-height:44px;padding:6px 2px}\n .reader-contents>span{display:none}\n .reader-tabs{flex:1 1 auto;gap:2px}\n .reader-tab{flex:1 0 auto;min-height:44px;padding:6px 7px;gap:4px}\n .reader-tab-label{font-size:12px}\n .reader-tab-number{font-size:10px}\n}\n@media(max-width:380px){.reader-header-inner{padding-left:6px;padding-right:6px;gap:4px}.reader-tab{padding-left:5px;padding-right:5px;gap:3px}}\n@media print{\n html[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article{padding-top:0}\n html[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.article-header,\n html[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.opening{display:block}\n}";
+      document.head.appendChild(style);
+    }
+    var labels = ['Basics','Losses','Batches','Classes'];
+    header.querySelectorAll('.reader-tab').forEach(function(link,index) {
+      var label = link.querySelector('.reader-tab-label');
+      var fullTitle = link.getAttribute('title') || (label && label.textContent) || '';
+      link.setAttribute('aria-label','Section '+(index+1)+': '+fullTitle);
+      if(label) label.textContent = labels[index];
+    });
+    var contentsLink = header.querySelector('[data-reader-contents]');
+    if(contentsLink) {
+      contentsLink.setAttribute('aria-controls',overview.id);
+      contentsLink.setAttribute('aria-label','Show full contents');
+      contentsLink.setAttribute('title','Show full contents');
+    }
+  }
+  function setOverviewExpanded(expanded) {
+    overviewExpanded = Boolean(expanded);
+    root.dataset.readerOverview = overviewExpanded ? 'expanded' : 'compact';
+    var contentsLink = header.querySelector('[data-reader-contents]');
+    if(contentsLink) contentsLink.setAttribute('aria-expanded',String(overviewExpanded));
+  }
 
   function newKey() { sequence += 1; return 'cl-reader-' + Date.now() + '-' + sequence; }
   function hashId(hash) {
@@ -49,7 +78,7 @@
     return state;
   }
   function entryState(key, hash, y) {
-    return {key: key, section: activeId, hash: hash, scrollY: y};
+    return {key: key, section: activeId, hash: hash, scrollY: y, overviewExpanded: overviewExpanded};
   }
   function recordPosition() {
     if (currentEntry) positions.set(currentEntry, {section: activeId, scrollY: window.scrollY});
@@ -89,11 +118,12 @@
     if (visible) measureHeader();
   }
   function updateHeader() {
-    setHeaderVisible(overview.getBoundingClientRect().bottom <= 1);
+    setHeaderVisible(!overviewExpanded || overview.getBoundingClientRect().bottom <= 1);
   }
-  function activate(id) {
+  function activate(id, expanded) {
     if (ids.indexOf(id) === -1) id = ids[0];
     activeId = id;
+    setOverviewExpanded(typeof expanded === 'boolean' ? expanded : id === ids[0]);
     chapters.forEach(function (chapter) { chapter.hidden = chapter.id !== id; });
     footerPanels.forEach(function (panel) { panel.hidden = panel.getAttribute('data-reader-footer') !== id; });
     document.querySelectorAll('[data-reader-section]').forEach(function (link) {
@@ -144,6 +174,7 @@
     var version = navigationVersion;
     var section = sectionFor(target);
     if (section) activate(section);
+    else if (target === overview || overview.contains(target)) setOverviewExpanded(true);
     openDetails(target);
     writeHistory(hash);
     afterLayout(function () { scrollToTarget(target, focus, version); });
@@ -162,7 +193,8 @@
     var match = saved && saved.hash === location.hash;
     var previousPosition = match && saved.key ? positions.get(saved.key) : null;
     var section = sectionFor(target) || (match && saved.section) || ids[0];
-    activate(section);
+    var expanded = target === overview || overview.contains(target) || (match && typeof saved.overviewExpanded === 'boolean' ? saved.overviewExpanded : section === ids[0]);
+    activate(section,expanded);
     currentEntry = match && saved.key ? saved.key : newKey();
     if (target) openDetails(target);
     afterLayout(function () {
@@ -197,6 +229,7 @@
   function init() {
     if (initialized) return;
     initialized = true;
+    installCompactNavigation();
     resetSupplementDetails();
     var initialHash = location.hash;
     var target = targetFor(initialHash);
@@ -204,7 +237,8 @@
     activeId = sectionFor(target) || (saved && ids.indexOf(saved.section) !== -1 ? saved.section : ids[0]);
     currentEntry = saved && saved.key || newKey();
     try { history.scrollRestoration = 'manual'; } catch (error) {}
-    activate(activeId);
+    var showOverview = target === overview || overview.contains(target) || (saved && saved.hash === initialHash && typeof saved.overviewExpanded === 'boolean' ? saved.overviewExpanded : activeId === ids[0]);
+    activate(activeId,showOverview);
     root.dataset.readerMode = 'single';
     root.dataset.readerReady = 'true';
     updateHeader();
