@@ -1,3 +1,131 @@
+(function () {
+  'use strict';
+  // Keep the original sticky header. Only the in-page Contents becomes compact
+  // when a research section (02–04) is selected.
+  var style = document.createElement('style');
+  style.id = 'reader-layout-refinements';
+  style.textContent = `
+.overview.overview-paths.overview-compact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 6px;max-width:1120px;padding:16px 18px;margin:26px auto 0;border-radius:8px;background:#fff}
+.overview-compact .overview-heading{grid-column:1/-1;margin:0;display:block}
+.overview-compact #overview-title:focus{outline:none}
+.overview-compact .overview-heading h2{font-size:14px;line-height:1.4;font-weight:500;color:#5e6b7d}
+.overview-compact .overview-foundation,.overview-compact li.overview-topic{display:block;max-width:none;margin:0;padding:0;border:0!important;border-radius:0;background:transparent;min-width:0}
+.overview-compact .overview-branches,.overview-compact .overview-topics{display:contents}
+.overview-compact .overview-branches::before,.overview-compact .overview-topics::before,.overview-compact li.overview-topic::before,.overview-compact li.overview-topic::after{display:none}
+.overview-compact .overview-kind,.overview-compact .overview-description,.overview-compact .overview-publication{display:none}
+.overview-compact a.overview-section,.overview-compact .overview-topic a.overview-section{display:grid;grid-template-columns:17px minmax(0,1fr);gap:7px;align-items:start;padding:9px 10px;min-height:54px;height:100%;border-radius:5px;text-decoration:none}
+.overview-compact .overview-section strong,.overview-compact .overview-topic .overview-section strong{display:block;font-size:13.5px;font-weight:500;line-height:1.4}
+.overview-compact .overview-section .overview-number,.overview-compact .overview-topic .overview-section .overview-number{display:block;margin:2px 0 0;font-size:10.5px;line-height:1.4}
+.overview-compact .overview-section br{display:none}
+.overview-compact a.overview-section:hover{background:#f5f7fb}
+.overview-compact a.overview-section[aria-current="page"]{background:#edf3ff;color:#174faa}
+.overview-compact a.overview-section[aria-current="page"] strong{font-weight:600}
+.math-details:not(.empirical-details) .math-scroll{padding:10px 1px 14px;margin:7px 0 14px;overflow-x:auto;overflow-y:hidden}
+.math-details:not(.empirical-details) .math-scroll>math{font-size:20px;white-space:nowrap;max-width:none}
+.math-details .math-scroll>math[data-equation-layout="single"]{display:block;width:max-content;min-width:max-content;margin-left:auto;margin-right:auto}
+#batch-mathematical-details .math-pair{grid-template-columns:minmax(0,1fr);gap:0}
+@media(max-width:760px){
+ .overview.overview-paths.overview-compact{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 4px;padding:14px;margin-top:22px}
+ .overview-compact a.overview-section,.overview-compact .overview-topic a.overview-section{min-height:62px;padding:8px 6px;gap:5px;grid-template-columns:16px minmax(0,1fr)}
+ .overview-compact .overview-section strong,.overview-compact .overview-topic .overview-section strong{font-size:13px;line-height:1.4}
+}
+@media(max-width:600px){
+ .math-details:not(.empirical-details) .math-scroll>math{font-size:18px}
+}
+@media print{.overview.overview-paths.overview-compact{break-inside:avoid}}
+`;
+  document.head.appendChild(style);
+
+  var ns = 'http://www.w3.org/1998/Math/MathML';
+  function node(name, text) {
+    var element = document.createElementNS(ns, name);
+    if (text !== undefined) element.textContent = text;
+    return element;
+  }
+  function separator(row, comma) {
+    if (comma) row.appendChild(node('mo', ','));
+    var space = node('mspace');
+    space.setAttribute('width', '.8em');
+    row.appendChild(space);
+  }
+  document.querySelectorAll('.math-details:not(.empirical-details) math').forEach(function (math) {
+    var annotation = math.querySelector('annotation[encoding="application/x-tex"]');
+    var tex = annotation ? annotation.textContent : '';
+    var semantics = math.querySelector('semantics');
+    if (!semantics) return;
+
+    // MathML Core does not consistently render every legacy mathvariant.
+    // Use the actual mathematical glyphs for the paper's blackboard symbols.
+    math.querySelectorAll('mi[mathvariant="double-struck"]').forEach(function (mi) {
+      var glyphs = {E: '𝔼', R: 'ℝ', N: 'ℕ'};
+      if (glyphs[mi.textContent]) {
+        mi.textContent = glyphs[mi.textContent];
+        mi.removeAttribute('mathvariant');
+      }
+    });
+    math.querySelectorAll('munder > mrow').forEach(function (operator) {
+      if (operator.children.length === 2 && operator.children[0].textContent === 'arg' && operator.children[1].textContent === 'min') {
+        var gap = node('mspace'); gap.setAttribute('width', '.16em');
+        operator.insertBefore(gap, operator.children[1]);
+      }
+    });
+    // Restore the paper's bold vector/set notation and random similarity s.
+    if (math.closest('#batch-mathematical-details')) {
+      math.querySelectorAll('mi').forEach(function (mi) {
+        var letter = mi.textContent;
+        if (/^(s|x|y|u|v|U|V|I)$/.test(letter)) {
+          var base = letter >= 'A' && letter <= 'Z' ? 0x1D468 - 65 : 0x1D482 - 97;
+          mi.textContent = String.fromCodePoint(base + letter.charCodeAt(0));
+          mi.removeAttribute('mathvariant');
+        }
+      });
+      if (annotation) {
+        tex = tex.replace(/(^|[^\\a-zA-Z])(s|x|y|u|v|U|V|I)(?=[_({;\s,]|$)/g, '$1\\boldsymbol $2');
+        annotation.textContent = tex = tex.replace(/\\boldsymbol\s+\\boldsymbol\s+/g, '\\boldsymbol ');
+      }
+    }
+    // Sigmoid loss is written L^{sig} in the AISTATS 2024 paper.
+    if (math.closest('#ccem-mathematical-details')) {
+      math.querySelectorAll('msub').forEach(function (sub) {
+        if (sub.children.length === 2 && sub.children[0].textContent === 'ℒ' && sub.children[1].textContent === 'sig') {
+          var sup = node('msup');
+          while (sub.firstChild) sup.appendChild(sub.firstChild);
+          sub.replaceWith(sup);
+        }
+      });
+      if (annotation) annotation.textContent = tex = tex.replace(/\\mathcal L_\{\\mathrm\{sig\}\}/g, '\\mathcal L^{\\mathrm{sig}}');
+    }
+    // The SSEM paper uses a superscript, Var^{Btwn}, not Var_{Btwn}.
+    if (math.closest('#ssem-mathematical-details')) {
+      math.querySelectorAll('msub').forEach(function (sub) {
+        if (sub.children.length === 2 && sub.children[0].textContent === 'Var' && sub.children[1].textContent === 'Btwn') {
+          var sup = node('msup');
+          while (sub.firstChild) sup.appendChild(sub.firstChild);
+          sub.replaceWith(sup);
+        }
+      });
+      if (annotation) annotation.textContent = tex = tex.replace(/\\operatorname\{Var\}_\{\\mathrm\{Btwn\}\}/g, '\\operatorname{Var}^{\\mathrm{Btwn}}');
+    }
+
+    // Remove manual breaks inside a single equation, without flattening column
+    // vectors or groups of separate statements in an aligned environment.
+    var table = semantics.firstElementChild;
+    if (!table || table.localName !== 'mtable' || /\\begin\{(?:aligned|pmatrix|bmatrix|cases)\}/.test(tex)) return;
+    var row = node('mrow');
+    Array.prototype.forEach.call(table.children, function (tr, index) {
+      if (index) {
+        var clause = tr.textContent.trim();
+        if ((/^\(/.test(clause) && clause.indexOf('∼') !== -1) || /^k∈|^λ>/.test(clause)) separator(row, true);
+        else if (/^∃/.test(clause)) separator(row, false);
+      }
+      Array.prototype.forEach.call(tr.children, function (td) {
+        while (td.firstChild) row.appendChild(td.firstChild);
+      });
+    });
+    table.replaceWith(row);
+    math.setAttribute('data-equation-layout', 'single');
+  });
+})();
 
 (function () {
   'use strict';
@@ -11,7 +139,6 @@
   if (!overview || !header || chapters.some(function (chapter) { return !chapter; })) return;
 
   var activeId = ids[0];
-  var overviewExpanded = true;
   var sequence = 0;
   var navigationVersion = 0;
   var currentEntry = null;
@@ -19,36 +146,8 @@
   var scrollFrame = 0;
   var historyFrame = 0;
   var pendingOwnHash = null;
-  var headerHeight = 53;
+  var headerHeight = 68;
   var initialized = false;
-
-  function installCompactNavigation() {
-    if (!document.getElementById('compact-reader-navigation')) {
-      var style = document.createElement('style');
-      style.id = 'compact-reader-navigation';
-      style.textContent = ".section-reader-header{box-shadow:none}\n.reader-header-inner{min-height:52px;padding:4px 24px;gap:12px;align-items:center}\n.reader-contents{min-height:40px;padding:6px 4px;font-size:12px}\n.reader-tabs{display:flex;flex:1 1 auto;gap:4px;min-width:0;overflow-x:auto;scrollbar-width:none}\n.reader-tabs::-webkit-scrollbar{display:none}\n.reader-tab{display:flex;flex:0 0 auto;align-items:center;gap:6px;min-height:40px;padding:7px 12px;font-size:13px;line-height:1.3;border:1px solid transparent;background:transparent;border-radius:5px;white-space:nowrap}\n.reader-tab-number{align-self:center;margin-top:0;font-size:11px;line-height:1.3}\n.reader-tab-label{font-size:13px;white-space:nowrap}\n.reader-tab[aria-current=\"page\"]{background:#edf3ff;border-color:transparent}\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article{padding-top:calc(var(--reader-header-height,53px) + 18px)}\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.article-header,\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.opening{display:none}\nhtml[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .chapter{margin-top:0;padding-top:8px;border-top:0}\n@media(max-width:760px){\n .reader-header-inner{min-height:52px;padding:4px 10px;gap:6px}\n .reader-contents{min-width:24px;min-height:44px;padding:6px 2px}\n .reader-contents>span{display:none}\n .reader-tabs{flex:1 1 auto;gap:2px}\n .reader-tab{flex:1 0 auto;min-height:44px;padding:6px 7px;gap:4px}\n .reader-tab-label{font-size:12px}\n .reader-tab-number{font-size:10px}\n}\n@media(max-width:380px){.reader-header-inner{padding-left:6px;padding-right:6px;gap:4px}.reader-tab{padding-left:5px;padding-right:5px;gap:3px}}\n@media print{\n html[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article{padding-top:0}\n html[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.article-header,\n html[data-reader-mode=\"single\"][data-reader-overview=\"compact\"] .article>.opening{display:block}\n}";
-      document.head.appendChild(style);
-    }
-    var labels = ['Basics','Losses','Batches','Classes'];
-    header.querySelectorAll('.reader-tab').forEach(function(link,index) {
-      var label = link.querySelector('.reader-tab-label');
-      var fullTitle = link.getAttribute('title') || (label && label.textContent) || '';
-      link.setAttribute('aria-label','Section '+(index+1)+': '+fullTitle);
-      if(label) label.textContent = labels[index];
-    });
-    var contentsLink = header.querySelector('[data-reader-contents]');
-    if(contentsLink) {
-      contentsLink.setAttribute('aria-controls',overview.id);
-      contentsLink.setAttribute('aria-label','Show full contents');
-      contentsLink.setAttribute('title','Show full contents');
-    }
-  }
-  function setOverviewExpanded(expanded) {
-    overviewExpanded = Boolean(expanded);
-    root.dataset.readerOverview = overviewExpanded ? 'expanded' : 'compact';
-    var contentsLink = header.querySelector('[data-reader-contents]');
-    if(contentsLink) contentsLink.setAttribute('aria-expanded',String(overviewExpanded));
-  }
 
   function newKey() { sequence += 1; return 'cl-reader-' + Date.now() + '-' + sequence; }
   function hashId(hash) {
@@ -78,7 +177,7 @@
     return state;
   }
   function entryState(key, hash, y) {
-    return {key: key, section: activeId, hash: hash, scrollY: y, overviewExpanded: overviewExpanded};
+    return {key: key, section: activeId, hash: hash, scrollY: y};
   }
   function recordPosition() {
     if (currentEntry) positions.set(currentEntry, {section: activeId, scrollY: window.scrollY});
@@ -118,12 +217,11 @@
     if (visible) measureHeader();
   }
   function updateHeader() {
-    setHeaderVisible(!overviewExpanded || overview.getBoundingClientRect().bottom <= 1);
+    setHeaderVisible(overview.getBoundingClientRect().bottom <= 1);
   }
-  function activate(id, expanded) {
+  function activate(id) {
     if (ids.indexOf(id) === -1) id = ids[0];
     activeId = id;
-    setOverviewExpanded(typeof expanded === 'boolean' ? expanded : id === ids[0]);
     chapters.forEach(function (chapter) { chapter.hidden = chapter.id !== id; });
     footerPanels.forEach(function (panel) { panel.hidden = panel.getAttribute('data-reader-footer') !== id; });
     document.querySelectorAll('[data-reader-section]').forEach(function (link) {
@@ -132,6 +230,7 @@
       else link.removeAttribute('aria-current');
     });
     root.dataset.readerSection = id;
+    overview.classList.toggle('overview-compact', id !== ids[0]);
     window.requestAnimationFrame(function () {
       window.dispatchEvent(new Event('resize'));
     });
@@ -174,7 +273,6 @@
     var version = navigationVersion;
     var section = sectionFor(target);
     if (section) activate(section);
-    else if (target === overview || overview.contains(target)) setOverviewExpanded(true);
     openDetails(target);
     writeHistory(hash);
     afterLayout(function () { scrollToTarget(target, focus, version); });
@@ -193,8 +291,7 @@
     var match = saved && saved.hash === location.hash;
     var previousPosition = match && saved.key ? positions.get(saved.key) : null;
     var section = sectionFor(target) || (match && saved.section) || ids[0];
-    var expanded = target === overview || overview.contains(target) || (match && typeof saved.overviewExpanded === 'boolean' ? saved.overviewExpanded : section === ids[0]);
-    activate(section,expanded);
+    activate(section);
     currentEntry = match && saved.key ? saved.key : newKey();
     if (target) openDetails(target);
     afterLayout(function () {
@@ -229,7 +326,6 @@
   function init() {
     if (initialized) return;
     initialized = true;
-    installCompactNavigation();
     resetSupplementDetails();
     var initialHash = location.hash;
     var target = targetFor(initialHash);
@@ -237,8 +333,7 @@
     activeId = sectionFor(target) || (saved && ids.indexOf(saved.section) !== -1 ? saved.section : ids[0]);
     currentEntry = saved && saved.key || newKey();
     try { history.scrollRestoration = 'manual'; } catch (error) {}
-    var showOverview = target === overview || overview.contains(target) || (saved && saved.hash === initialHash && typeof saved.overviewExpanded === 'boolean' ? saved.overviewExpanded : activeId === ids[0]);
-    activate(activeId,showOverview);
+    activate(activeId);
     root.dataset.readerMode = 'single';
     root.dataset.readerReady = 'true';
     updateHeader();
