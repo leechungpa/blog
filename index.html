@@ -1,97 +1,49 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research notes | Chungpa Lee</title>
-  <meta name="description" content="Research notes by Chungpa Lee. An interactive guide to contrastive learning geometry, softmax and sigmoid losses, batch size, and class collapse.">
-  <meta name="author" content="Chungpa Lee">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://blog.chungpa.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Chungpa Lee · Research notes">
-  <meta property="og:title" content="Research notes | Chungpa Lee">
-  <meta property="og:description" content="An interactive guide to contrastive learning geometry, softmax and sigmoid losses, batch size, and class collapse.">
-  <meta property="og:url" content="https://blog.chungpa.com/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://blog.chungpa.com/#website",
-        "url": "https://blog.chungpa.com/",
-        "name": "Chungpa Lee · Research notes",
-        "inLanguage": "en",
-        "publisher": {
-          "@type": "Person",
-          "@id": "https://www.chungpa.com/#person",
-          "name": "Chungpa Lee",
-          "url": "https://www.chungpa.com/"
-        }
-      },
-      {
-        "@type": "CollectionPage",
-        "@id": "https://blog.chungpa.com/#collection",
-        "url": "https://blog.chungpa.com/",
-        "name": "Research notes",
-        "description": "Research notes by Chungpa Lee. An interactive guide to contrastive learning geometry, softmax and sigmoid losses, batch size, and class collapse.",
-        "inLanguage": "en",
-        "dateModified": "2026-10-23T00:43:58-07:00",
-        "isPartOf": {"@id": "https://blog.chungpa.com/#website"},
-        "mainEntity": {
-          "@type": "ItemList",
-          "numberOfItems": 1,
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "url": "https://blog.chungpa.com/0/",
-              "name": "[Draft] The Optimal Geometry of Contrastive Learning Objectives"
-            }
-          ]
-        }
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Research notes | Chungpa Lee</title><meta name="author" content="Chungpa Lee"><meta name="description" content="Interactive research posts on contrastive learning, sparse autoencoders, and the geometry of learned representations."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://blog.chungpa.com/"><meta property="og:type" content="website"><meta property="og:title" content="Research notes | Chungpa Lee"><meta property="og:description" content="Interactive research posts on contrastive learning and cross-modal sparse autoencoders."><meta property="og:url" content="https://blog.chungpa.com/"><meta property="og:site_name" content="Chungpa Lee · Research notes"><link rel="stylesheet" href="assets/blog.css">
+<style>:root{color:#172334;background:white}*{box-sizing:border-box}body{margin:0}main{width:min(100% - 44px,880px);margin:64px auto 90px}.site-header{margin-bottom:36px}.author{font-size:14px;line-height:1.5;color:#5e6b7d;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:4px}h1{font-size:32px;line-height:1.2;letter-spacing:-.025em;font-weight:600;margin:12px 0 15px}.intro{font-size:16px;line-height:1.7;color:#5e6b7d;max-width:700px;margin:0}.posts{list-style:none;padding:0;margin:0;border-top:1px solid #dce3ec}.post{padding:27px 0 30px;border-bottom:1px solid #dce3ec}.post-meta{display:flex;align-items:center;gap:14px;font-size:12px;color:#5e6b7d;margin-bottom:11px}.draft-label{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#64748b}h2{font-size:23px;font-weight:600;line-height:1.4;letter-spacing:-.02em;margin:0;max-width:750px}h2 a{color:inherit;text-decoration:none}h2 a:hover{color:#245bd7}.description{font-size:16px;line-height:1.7;color:#5e6b7d;margin:12px 0 0;max-width:740px}.topics{font-size:12px;line-height:1.6;color:#64748b;margin:14px 0 0}.index-footer{font-size:13px;color:#5e6b7d;margin-top:30px}.index-footer a{color:inherit}a:focus-visible{outline:2px solid #245bd7;outline-offset:5px}@media(max-width:600px){main{margin-top:36px}h1{font-size:28px}h2{font-size:21px}.intro,.description{font-size:15px}.post{padding:23px 0 26px}}</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://blog.chungpa.com/#website",
+      "url": "https://blog.chungpa.com/",
+      "name": "Chungpa Lee · Research notes",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Person",
+        "name": "Chungpa Lee",
+        "url": "https://www.chungpa.com/"
       }
-    ]
-  }
-  </script>
-  <style>
-    :root{color-scheme:light;font-family:Arial,Helvetica,sans-serif;color:#20252c;background:#fff}
-    *{box-sizing:border-box}
-    body{margin:0}
-    main{width:min(100% - 44px,760px);margin:64px auto 100px}
-    .site-header{margin-bottom:38px}
-    .author{font-size:14px;line-height:1.5;color:#59616c;text-decoration:none}
-    .author:hover{text-decoration:underline;text-underline-offset:3px}
-    h1{margin:10px 0 0;font-size:28px;line-height:1.25;font-weight:600;letter-spacing:-.025em}
-    .posts{list-style:none;padding:0;margin:0;border-top:1px solid #e1e4e8}
-    .post{padding:25px 0 27px;border-bottom:1px solid #e1e4e8}
-    h2{max-width:680px;margin:0;font-size:21px;line-height:1.45;font-weight:550;letter-spacing:-.015em}
-    h2 a{color:inherit;text-decoration:none}
-    h2 a:hover{color:#315d96;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-    .date{margin:10px 0 0;font-size:12px;line-height:1.5;color:#68717c}
-    .description{max-width:660px;margin:12px 0 0;font-size:15px;line-height:1.65;color:#4d5663}
-    a:focus-visible{outline:2px solid #4778b0;outline-offset:5px;border-radius:1px}
-    @media(max-width:600px){main{margin-top:36px}.site-header{margin-bottom:28px}h1{font-size:26px}h2{font-size:19px}.post{padding:22px 0 24px}.description{font-size:14px}}
-  </style>
-<meta name="color-scheme" content="light">
-<style>html{color-scheme:only light}</style>
-</head>
-<body>
-  <main>
-    <header class="site-header">
-      <a class="author" href="https://www.chungpa.com/" rel="author">Chungpa Lee</a>
-      <h1>Research notes</h1>
-    </header>
-    <ul class="posts" aria-label="Research posts">
-      <li class="post">
-        <article>
-          <h2><a href="./0/">[Draft] The Optimal Geometry of Contrastive Learning Objectives</a></h2>
-          <p class="date">Updated <time datetime="2026-10-23T00:43:58-07:00">Oct 23, 2026</time></p>
-          <p class="description">Contrastive learning geometry: softmax and sigmoid losses, batch size, and class collapse.</p>
-        </article>
-      </li>
-    </ul>
-  </main>
-</body>
-</html>
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://blog.chungpa.com/#collection",
+      "url": "https://blog.chungpa.com/",
+      "name": "Research notes",
+      "dateModified": "2026-10-29",
+      "isPartOf": {
+        "@id": "https://blog.chungpa.com/#website"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 2,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://blog.chungpa.com/1/",
+            "name": "[Draft] Same Concept, Different Directions"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://blog.chungpa.com/0/",
+            "name": "[Draft] The Optimal Geometry of Contrastive Learning Objectives"
+          }
+        ]
+      }
+    }
+  ]
+}</script></head><body><main><header class="site-header"><a class="author" href="https://www.chungpa.com/" rel="author">Chungpa Lee</a><h1>Research notes</h1><p class="intro">Ideas behind the papers, explained through interactive figures.<br>These posts are drafts and will continue to evolve.</p></header><ul class="posts" aria-label="Research posts"><li class="post"><article><div class="post-meta"><span class="draft-label">Draft</span><span>Updated <time datetime="2026-10-29">Oct 29, 2026</time></span></div><h2><a href="./1/">Same Concept, Different Directions</a></h2><p class="description">Why sparse feature recovery and cross-modal correspondence benefit from separate steps.</p><p class="topics">Mechanistic interpretability · Sparse autoencoders · Multimodal representations</p></article></li><li class="post"><article><div class="post-meta"><span class="draft-label">Draft</span><span>Updated <time datetime="2026-10-29">Oct 29, 2026</time></span></div><h2><a href="./0/">The Optimal Geometry of Contrastive Learning Objectives</a></h2><p class="description">How contrastive objectives, mini-batches, and class labels shape embedding geometry.</p><p class="topics">Contrastive learning · Embedding geometry · Learning theory</p></article></li></ul><footer class="index-footer"><a href="https://www.chungpa.com/">About the author and research →</a></footer></main></body></html>

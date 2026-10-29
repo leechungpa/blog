@@ -1,0 +1,14 @@
+/* Shared research-post typography and navigation. */
+@font-face{font-family:ResearchPost;src:url('../0/assets/math-font-7c25be4d7815.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:ResearchPost;src:url('../0/assets/math-font-7f33328e6b4d.otf') format('opentype');font-weight:600 900;font-display:swap}
+html{color-scheme:only light}body{font-family:ResearchPost,Inter,Arial,Helvetica,sans-serif}
+.article{width:min(1184px,100%);padding-top:64px}.article-header{max-width:880px;margin:0 auto 36px}
+.article-header .post-index-link,.article-header .back{display:inline-block;font-size:14px;line-height:1.5;color:#5e6b7d;text-decoration:none;margin-bottom:20px}.article-header .post-index-link:hover,.article-header .back:hover{text-decoration:underline;text-underline-offset:4px}
+.article-header h1{font-size:clamp(32px,4.1vw,50px);font-weight:600;letter-spacing:-.035em;line-height:1.14;margin:0 0 20px;text-wrap:balance}
+.article-header .byline{font-size:14px;line-height:1.6;color:#5e6b7d;margin:0}.article-header .byline a{color:inherit;text-decoration:none}.article-header .byline a:hover{text-decoration:underline}
+.post-draft{font:600 12px/1.5 ResearchPost,Arial,sans-serif;color:#64748b;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
+.post-footer{max-width:880px;margin:58px auto 0;border-top:1px solid #dce3ec;padding-top:22px;display:grid;grid-template-columns:1fr auto;gap:18px;font-size:14px;line-height:1.6}.post-footer .related{color:#172334;text-decoration:none;max-width:560px}.post-footer .related:hover{text-decoration:underline;text-underline-offset:4px}.post-footer .related span{display:block;color:#5e6b7d;font-size:12px;margin-bottom:5px}.post-footer .all-posts{color:#5e6b7d;white-space:nowrap;align-self:end}
+.sae-contents{margin:30px 0 0}.sae-contents h2{font-size:20px;line-height:1.4;margin:0 0 12px}.sae-contents ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0 25px;border-top:1px solid #dce3ec}.sae-contents li{border-bottom:1px solid #dce3ec}.sae-contents a{display:flex;gap:12px;align-items:baseline;padding:13px 0;color:#172334;text-decoration:none;font-size:15px;line-height:1.5}.sae-contents a span{font-size:12px;color:#245bd7}.sae-contents a:hover{text-decoration:underline;text-underline-offset:4px}
+select:focus-visible{outline:2px solid #245bd7;outline-offset:4px}
+@media(max-width:760px){.article{padding:38px 20px 64px}.article-header{margin-bottom:30px}.article-header .byline{font-size:13px}.post-footer{grid-template-columns:1fr;margin-top:40px;gap:20px}.sae-contents ol{grid-template-columns:1fr}.post-draft{font-size:11px}}
+@media print{.post-footer{display:none}.article{padding:0}}
